@@ -175,23 +175,33 @@ nav
 	margin-bottom ($gap/2)
 .wrapper-collection
 	display flex
-	flex-wrap wrap
-	margin 20px -20px
+	margin -20px
 .item-collection
 	width 25%
+	margin 20px
 	> div
-		margin 20px ($gutter/2)
-		background $gray
-		padding-bottom 20%
-		overflow hidden
-	img
 		width 100%
-		opacity 1
-		position absolute
-		top 0
-		left 0
-		object-fit cover
-	a
-		display block
+		background $gray
+		padding-bottom 180%
 		position relative
+		overflow hidden
+		img
+			width 100%
+			height auto
+		> *
+			position absolute
+.desc-collection
+	bottom 0
+	display flex
+	background $gray2
+	padding 11px 16px
+	flex-direction column
+.link-collection
+	a
+		font-size $desc-t
+		font-family dinM
+.desc-price
+	margin-top ($gutter/2)
+	display flex
+	justify-content space-between
 // -----------------------------------------------------------------------------------------------------------
