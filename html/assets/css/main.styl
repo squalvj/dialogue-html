@@ -1,0 +1,197 @@
+@font-face
+	font-family dinR
+	src url(../fonts/DINRegular.ttf)
+
+@font-face
+	font-family dinM
+	src url(../fonts/DINMedium.ttf)
+	
+$grid = 60px
+$gutter = 40px
+$gap = 48px
+$black = #3c3c3c
+$black2 = #4f4f4f
+$gray = #e0e0e0
+$gray2 = #fafafa
+$white = #ffffff
+$header-t = 24px
+$desc-t = 18px
+
+html
+	box-sizing: border-box;
+*, *:before, *:after
+	box-sizing: inherit;
+
+// container bootstrap
+.container
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	
+@media (min-width: 768px)
+	.container
+		width 750px
+		
+@media (min-width: 993px)
+	.container
+		width 970px
+	
+@media (min-width: 1200px)
+	.container
+		width 1200px
+		//width 1170px
+
+// flex slider
+// .flex-control-nav
+// 	bottom 30px
+// .flex-control-paging li a
+// 	background transparent
+// 	box-shadow inset 0 0 3px white
+// 	width 15px
+// 	height 15px
+// .flex-control-paging li a.flex-active
+// 	background white
+// .flex-control-paging li a:hover
+// 	background white
+// .flex-direction-nav a:before
+// 	color white
+
+// owl carousel
+.owl-dots
+	position: absolute;
+	bottom: 20px;
+	margin-left: 50%;
+	transform: translate(-50%);
+.owl-theme .owl-dots .owl-dot.active span
+	background white
+.owl-theme .owl-dots .owl-dot span
+	background transparent
+	border 1px solid white
+h1,h2,h3,p,a
+	color $black
+	font-family dinR
+a
+	text-decoration none
+.util-img
+	width 28px
+	height auto
+#logo
+	width 120px
+.rel
+	position relative
+.count-cart
+	font-size 14px
+	margin-left 5px
+	display none
+.align-center
+	align-items center
+.flex
+	display flex
+.cart
+	display flex
+	align-items center
+section
+	margin-bottom $gap
+// navbar
+header
+	position relative
+	margin-bottom 38px
+	&:after
+		position absolute
+		width 100%
+		height 2px
+		content ''
+		box-shadow 0px 2px 1px 1px rgba(0,0,0,0.1)
+nav
+	padding-top 30px
+	a
+		font-family dinM
+		font-size 21px
+		display inline-block
+	.nav-wrapper
+		display flex
+		align-items center
+	.nav-top
+		justify-content space-between
+	.nav-util
+		display flex
+		align-items end
+	.nav-right
+		a
+			margin 0 7px
+			&:last-child
+				margin-right 0
+			&:first-child
+				margin-left 0
+	ul
+		display flex
+		justify-content center
+		list-style-type none
+		padding 0
+		margin 0
+		width 100%
+		flex-wrap wrap
+		li
+			margin ($gap / 2)
+	
+// carousel
+.wrapper-outer-slider
+	display flex
+	border 1px solid black
+.wrapper-slider
+	position relative
+	width 65%
+#navigasi-owl
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	display flex
+	align-items center
+	justify-content space-between
+	z-index 2
+	pointer-events none
+	img
+		transition all .25s ease
+		pointer-events auto
+		margin 0 20px
+		&:hover
+			transform scale(1.2)
+			cursor pointer
+.wrapper-caption-slider
+	width 35%
+	padding $gap
+.header-caption-slider
+	font-family dinM
+	font-size $header-t
+.caption-slider
+	font-size $desc-t
+.header-collection
+	margin 0
+	font-size 21px
+	font-family dinM
+	margin-bottom ($gap/2)
+.wrapper-collection
+	display flex
+	flex-wrap wrap
+	margin 20px -20px
+.item-collection
+	width 25%
+	> div
+		margin 20px ($gutter/2)
+		background $gray
+		padding-bottom 20%
+		overflow hidden
+	img
+		width 100%
+		opacity 1
+		position absolute
+		top 0
+		left 0
+		object-fit cover
+	a
+		display block
+		position relative
+// -----------------------------------------------------------------------------------------------------------
