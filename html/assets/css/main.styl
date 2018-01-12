@@ -17,11 +17,29 @@ $white = #ffffff
 $header-t = 24px
 $desc-t = 18px
 
+display()
+	-webkit-display arguments
+	-moz-display arguments
+	-ms-display arguments
+	-o-display arguments
+	display arguments
+flex-direction()
+	-webkit-flex-direction arguments
+	-moz-flex-direction arguments
+	-ms-flex-direction arguments
+	-o-flex-direction arguments
+	flex-direction arguments
+transition()
+	-webkit-transition: arguments
+	-moz-transition: arguments
+	-ms-transition: arguments
+	-o-transition: arguments
+	transition: arguments
+
 html
 	box-sizing: border-box;
 *, *:before, *:after
 	box-sizing: inherit;
-
 // container bootstrap
 .container
 	padding-right: 15px;
@@ -31,15 +49,15 @@ html
 	
 @media (min-width: 768px)
 	.container
-		width 750px
+		width unset
 		
 @media (min-width: 993px)
 	.container
-		width 970px
+		width unset
 	
-@media (min-width: 1200px)
+@media (min-width: 1280px)
 	.container
-		width 1200px
+		width 1240px
 		//width 1170px
 
 // flex slider
@@ -93,10 +111,11 @@ a
 	align-items center
 section
 	margin-bottom $gap
+	overflow hidden
 // navbar
 header
 	position relative
-	margin-bottom 38px
+	margin-bottom 36px
 	&:after
 		position absolute
 		width 100%
@@ -175,10 +194,18 @@ nav
 	margin-bottom ($gap/2)
 .wrapper-collection
 	display flex
-	margin -20px
+	margin -2.5%
+	flex-wrap wrap
 .item-collection
-	width 25%
-	margin 20px
+	width 20%
+	margin 2.5%
+	&:hover
+		cursor pointer
+		.desc-product
+			max-height 500px
+			animation-delay 0s
+		.link-collection
+			margin-bottom 0
 	> div
 		width 100%
 		background $gray
@@ -187,7 +214,8 @@ nav
 		overflow hidden
 		img
 			width 100%
-			height auto
+			max-height 350px
+			object-fit cover
 		> *
 			position absolute
 .desc-collection
@@ -196,7 +224,11 @@ nav
 	background $gray2
 	padding 11px 16px
 	flex-direction column
+	min-height 123px
 .link-collection
+	flex-grow 10
+	margin-bottom -100px
+	transition all .50s cubic-bezier(0.77, 0, 0.175, 1);
 	a
 		font-size $desc-t
 		font-family dinM
@@ -204,4 +236,34 @@ nav
 	margin-top ($gutter/2)
 	display flex
 	justify-content space-between
+	position relative
+	span
+		font-size $desc-t
+		z-index 2
+	a
+		color #8c8c8c
+		z-index 2
+	&:before
+		content: '';
+		position: absolute;
+		background: $gray2;
+		width: 120%;
+		top: 0;
+		left: -10%;
+		height: 160%;
+.desc-product
+	color #8c8c8c
+	font-size 16px
+	max-height: 0
+	overflow hidden
+	transition all .50s cubic-bezier(0.77, 0, 0.175, 1);
+	&:hover
+		cursor auto
 // -----------------------------------------------------------------------------------------------------------
+@-moz-document url-prefix()
+	.wrapper-collection
+		display block
+		&:after
+			clear both
+	.item-collection
+		float left
