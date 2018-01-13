@@ -16,6 +16,7 @@ $gray2 = #fafafa
 $white = #ffffff
 $header-t = 24px
 $desc-t = 18px
+$tit = 'Titillium Web', sans-serif;
 
 display()
 	-webkit-display arguments
@@ -41,7 +42,7 @@ html
 *, *:before, *:after
 	box-sizing: inherit;
 // container bootstrap
-.container
+.container,footer
 	padding-right: 30px;
 	padding-left: 30px;
 	margin-right: auto;
@@ -57,8 +58,9 @@ html
 		padding 0 30px
 	
 @media (min-width: 1280px)
-	.container
+	.container,footer
 		width 1240px
+		
 		//width 1170px
 
 // owl carousel
@@ -140,7 +142,10 @@ nav
 		flex-wrap nowrap
 		li
 			margin ($gap / 2)
-	
+
+.hamburger
+	display none	
+
 // carousel
 .wrapper-outer-slider
 	display flex
@@ -184,7 +189,7 @@ nav
 	margin -2.5%
 	flex-wrap wrap
 .desc-collections
-	bottom 0
+	bottom -6px
 	position absolute
 	display flex
 	background $gray2
@@ -250,13 +255,6 @@ nav
 		color #8C8C8C
 		display block
 		margin-top 10px
-	&:before
-		content: '';
-		position: absolute;
-		background: $gray2;
-		width: 100%;
-		top: 0;
-		height: 160%;
 .preview-item
 	position relative
 	width 100%
@@ -275,12 +273,86 @@ nav
 		img
 			width 100%
 			height auto
-			
+.divider
+	width 100%
+	height 5px
+	box-shadow 0px 1.5px 1px 0px rgba(0,0,0,0.2)
+	
+
+footer
+	font-family $tit
+	padding-bottom 60px
+	position relative
+	margin-top 30px
+	
+	.footer-address
+		font-family inherit
+		color #848484
+		left -15px
+		position relative
+		h2
+			font-size 17px
+			font-family inherit
+			margin 0
+			color inherit
+			&:last-of-type
+				margin-top 20px
+		p
+			font-family inherit
+			font-size 12px
+			line-height 16px
+			margin 0
+			color inherit
+	.wrapper-footer-link
+		list-style-type none
+		padding 0
+		margin 0
+		color #848484
+		li
+			display block
+			font-size 12px
+			color inherit
+			font-family $tit
+			&:first-child
+				font-size 17px
+				margin-bottom 1px
+			a
+				font-family $tit
+				color inherit
+				line-height 17px
+.wrapper-footer
+	display flex
+	justify-content space-between
 // -------------------------------------------------------------------------------------------------------------
 @media (max-width: 993px)
 	.wrapper-caption-slider
 		padding 30px
 @media (max-width: 768px)
+	.hamburger
+		display block
+		width 35px
+		margin-right 15px
+	#logo
+		width auto
+		height 58px
+	header
+		margin-bottom 15px
+		&:after
+			display none
+	nav
+		padding-top 15px
+		.nav-bottom
+			display none
+	.wrapper-footer
+		flex-wrap wrap
+	footer
+		.footer-address
+			width 100%
+			left 0 !important
+			margin-bottom 30px
+		.wrapper-footer-link
+			width 50%
+			margin-bottom 20px
 	.item-collections
 		width 45%
 		margin 2.5%
@@ -292,7 +364,17 @@ nav
 		width 100%
 	.container
 		padding 0 30px
+	.desc-collections
+		min-height unset
+	.item-collections
+		overflow unset
+	.desc-prices
+		bottom 10px
 @media (max-width: 576px)
+	.container
+		padding 0 15px
+	footer
+		padding 0 15px
 	.wrapper-outer-slider
 		margin 0 -30px
 		border none
