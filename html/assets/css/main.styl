@@ -54,26 +54,12 @@ html
 @media (min-width: 993px)
 	.container
 		width unset
+		padding 0 30px
 	
 @media (min-width: 1280px)
 	.container
 		width 1240px
 		//width 1170px
-
-// flex slider
-// .flex-control-nav
-// 	bottom 30px
-// .flex-control-paging li a
-// 	background transparent
-// 	box-shadow inset 0 0 3px white
-// 	width 15px
-// 	height 15px
-// .flex-control-paging li a.flex-active
-// 	background white
-// .flex-control-paging li a:hover
-// 	background white
-// .flex-direction-nav a:before
-// 	color white
 
 // owl carousel
 .owl-dots
@@ -151,7 +137,7 @@ nav
 		padding 0
 		margin 0
 		width 100%
-		flex-wrap wrap
+		flex-wrap nowrap
 		li
 			margin ($gap / 2)
 	
@@ -291,6 +277,9 @@ nav
 			height auto
 			
 // -------------------------------------------------------------------------------------------------------------
+@media (max-width: 993px)
+	.wrapper-caption-slider
+		padding 30px
 @media (max-width: 768px)
 	.item-collections
 		width 45%
@@ -301,6 +290,8 @@ nav
 		width 100%
 	.wrapper-caption-slider
 		width 100%
+	.container
+		padding 0 30px
 @media (max-width: 576px)
 	.wrapper-outer-slider
 		margin 0 -30px

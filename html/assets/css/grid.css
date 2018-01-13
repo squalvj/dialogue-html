@@ -1,0 +1,88 @@
+.l-grid {
+  width: 960px;
+  margin: 0 auto;
+}
+.l-row {
+  margin: 20px 0;
+}
+.l-row.l-compact {
+  margin: 0;
+}
+.l-cell {
+  float: left;
+  display: inline;
+  width: 60px;
+  margin: 0 10px;
+}
+.l-cell .l-row {
+  margin: 0 -10px 20px;
+}
+.l-cell .l-row.l-compact {
+  margin-bottom: 0;
+}
+.l-offset-1 {
+  margin-left: 90px;
+}
+.l-span-2 {
+  width: 140px;
+}
+.l-offset-2 {
+  margin-left: 170px;
+}
+.l-span-3 {
+  width: 220px;
+}
+.l-offset-3 {
+  margin-left: 250px;
+}
+.l-span-4 {
+  width: 300px;
+}
+.l-offset-4 {
+  margin-left: 330px;
+}
+.l-span-5 {
+  width: 380px;
+}
+.l-offset-5 {
+  margin-left: 410px;
+}
+.l-span-6 {
+  width: 460px;
+}
+.l-offset-6 {
+  margin-left: 490px;
+}
+.l-span-7 {
+  width: 540px;
+}
+.l-offset-7 {
+  margin-left: 570px;
+}
+.l-span-8 {
+  width: 620px;
+}
+.l-offset-8 {
+  margin-left: 650px;
+}
+.l-span-9 {
+  width: 700px;
+}
+.l-offset-9 {
+  margin-left: 730px;
+}
+.l-span-10 {
+  width: 780px;
+}
+.l-offset-10 {
+  margin-left: 810px;
+}
+.l-span-11 {
+  width: 860px;
+}
+.l-offset-11 {
+  margin-left: 890px;
+}
+.l-span-12 {
+  width: 940px;
+}
