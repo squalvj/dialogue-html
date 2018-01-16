@@ -439,6 +439,7 @@ footer
 		padding 10px 60px
 		font-family dinM
 		margin-bottom 36px
+		border none
 	hr
 		margin 0
 		margin-bottom 36px
@@ -492,23 +493,16 @@ footer
 			margin-bottom 0
 		
 .preview-gallery
-	padding-top 125%
 	position relative
 	overflow hidden
-	margin-bottom 20px
-	background $gray
-	figure
-		position absolute
-		left 0
-		top 0
-		right 0
-		bottom 0
-		margin 0
-		img
-			width 100%
-			height auto
+	//background $gray
+	img
+		width 100%
+		height auto
+		transition all .50s ease
 .owl-gallery
 	width 100%
+	margin-top 20px
 	.owl-item
 		.gallery-item
 			position relative
@@ -549,16 +543,63 @@ footer
 	//width calc(100% + 40%)
 	width calc(100% - 30%)
 	height calc(100% - 50%)
+	border 5px solid #42a842
+	display none
+.gallery-loader
+	display none
+	width 100%
+	height 500px
+	align-items center
+	justify-content center
+	img
+		width 30%
 // -------------------------------------------------------------------------------------------------------------
 @media (max-width: 993px)
 	.wrapper-caption-slider
 		padding 30px
 @media (max-width: 768px)
+	.row-2
+		label
+			display none
+			margin-bottom 15px
+		select
+			width 100%
+			padding 10px
+		input
+			width 100%
+			padding 10px
+			margin-bottom 25px
+		&.m-2
+			label
+				width 50%
+				display block
+			span
+				width 50%
+	.owl-gallery
+		width calc(100% + 60px)
+		margin 0 -30px
+		.owl-item
+			.gallery-item
+				height auto
+				.img-slider
+					height auto
+					object-fit contain
+					width 100%
+				&.active
+					border none
+	.navigasi-gallery
+		display none
+	.preview-gallery
+		display none
 	.wrapper-item
 		flex-wrap wrap
 	.wrapper-desc-item
 		width 100%
 		margin-top 30px
+		padding 0
+		button
+			width 100%
+			padding 15px 30px
 	.wrapper-gallery-item
 		width 100%
 		padding-right 0
@@ -622,6 +663,9 @@ footer
 		img
 			height 25px
 @media (max-width: 576px)
+	.owl-gallery
+		width calc(100% + 30px)
+		margin 0 -15px
 	.container
 		padding 0 15px
 	footer

@@ -57,11 +57,13 @@
         <div class="container">
             <div class="wrapper-item">
                 <div class="wrapper-gallery-item">
-                    <div class="preview-gallery rel magnifier-thumb-wrapper">
-                        <figure>
-                            <img data-large-img-url="assets/img/slide5.jpg" id="thumb" src="assets/img/slide5.jpg">
-                        </figure>
-                        
+                    <div class="preview-gallery rel">
+                        <a href="assets/img/slide5.jpg" data-featherlight="image">
+                            <img id="thumb" src="assets/img/slide5.jpg">
+                            <div class="gallery-loader">
+                                <img id="gallery-loader" src="assets/img/Eclipse.svg">
+                            </div>
+                        </a>
                     </div>
                     <div class="rel">
                         <div class="owl-gallery owl-carousel owl-theme">
@@ -79,7 +81,7 @@
                         </div>
                         <div class="navigasi-gallery"></div>
                     </div>
-                    <div class="magnifier-preview" id="preview"></div>
+                    
                 </div>
 
                 <div class="wrapper-desc-item">
@@ -89,13 +91,14 @@
                     <div class="row-2">
                         <label>Option : </label>
                         <select>
+                            <option>Option</option>
                             <option>Lorem</option>
                             <option>Ipsum</option>
                         </select>
                     </div>
                     <div class="row-2">
                         <label>Qty : </label>
-                        <input type="text" >
+                        <input type="text" placeholder="1..">
                     </div>
                     <button class="submit-item">Add to Cart </button>
                     <hr>
@@ -107,11 +110,11 @@
                     </div>
                     <div class="item-spec">
                         <h2>Specifications</h2>
-                        <div class="row-2">
+                        <div class="row-2 m-2">
                             <label>Dimensions:</label>
                             <span>30 x 40 x 50 cm</span>
                         </div>
-                        <div class="row-2">
+                        <div class="row-2 m-2">
                             <label>Material:</label>
                             <span>Card with bronzing detailing<br>
                             Mixed colouring process<br>

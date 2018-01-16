@@ -1,17 +1,7 @@
 
-var evt = new Event(),
-m = new Magnifier(evt);
 $(document).ready(function() {
 	var click = false;
-	init();
-
-	m.attach({
-	    thumb: '#thumb',
-	    zoomable: true,
-	    zoom:3,
-	   // large: 'preview',
-	    largeWrapper: 'preview'
-	});
+	init()
 	var w = $(window).width();
 });
 
@@ -46,7 +36,19 @@ function setGallerySingle(){
 	    items:5,
 	    navContainer: navC,
 		navText: nav,
-		dots: w < 768 ? true : false
+		dots: w < 768 ? true : false,
+		responsive:{
+	        0:{
+	            items:1,
+	            nav:false
+	        },
+	        768:{
+	            items:3,
+	        },
+	        1000:{
+	            items:5,
+	        }
+    	}
 	})
 }
 
@@ -55,14 +57,19 @@ function restartImgOwl(){
 	if (img.closest('.owl-height').height() === 1) { img.closest('.owl-carousel').trigger('refresh.owl.carousel'); }
 }
 
-function magnifierInit(img){
-	$(".magnifier-preview").find('img').attr('src', img);
-}
 
 $(".gallery-item").click(function(event) {
 	$(".owl-gallery").find(".gallery-item").removeClass('active')
 	$(this).addClass('active')
-	var img = $(this).find('img').attr('src')
-	$("#thumb").attr('src', img);
-	magnifierInit(img);
+	var src = $(this).find('img').attr('src')
+	var img = $("#thumb")
+	img.attr('src', '...');
+	img.hide();
+	img.attr('src', src);
+	$(".gallery-loader").css('display','flex');
+	img.on('load', function(){
+		$(".gallery-loader").css('display','none');
+		img.show();
+	})
+	
 });
