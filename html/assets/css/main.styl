@@ -5,6 +5,11 @@
 @font-face
 	font-family dinM
 	src url(../fonts/dinmedium-webfont.woff)
+
+@font-face
+	font-family circB
+	src url(../fonts/CircularStd-Book.woff)
+	
 	
 $grid = 60px
 $gutter = 40px
@@ -77,6 +82,7 @@ html
 h1,h2,h3,p,a
 	color $black
 	font-family dinR
+	font-weight unset
 a
 	text-decoration none
 .util-img
@@ -84,12 +90,22 @@ a
 	height auto
 #logo
 	width 120px
+	margin-top 5px
 .rel
 	position relative
 .count-cart
-	font-size 14px
-	margin-left 5px
-	display none
+	font-size: 14px;
+	margin-left: 5px;
+	display: flex;
+	font-family: circB;
+	background: #42a842;
+	color: #fff;
+	border-radius: 50px;
+	padding 0 5px
+	align-items: center;
+	justify-content: center;
+	min-height 18px
+	
 .align-center
 	align-items center
 .flex
@@ -103,7 +119,14 @@ section
 // navbar
 header
 	position relative
-	margin-bottom 36px
+	margin-bottom 26px
+	&.collapsible
+		margin-bottom 0
+		&:after
+			display none
+		&.bordered
+			&:after
+				display block
 	&:after
 		position absolute
 		width 100%
@@ -111,11 +134,16 @@ header
 		content ''
 		box-shadow 0px 2px 3px -1px rgba(0,0,0,0.2)
 nav
-	padding-top 30px
+	padding-top 20px
+	&.collapsible
+		padding 10px 0
 	a
 		font-family dinM
 		font-size 21px
 		display inline-block
+	.nav-middle
+		@media (max-width: 951px)
+			display none
 	.nav-wrapper
 		display flex
 		align-items center
@@ -124,6 +152,10 @@ nav
 	.nav-util
 		display flex
 		align-items center
+	.nav-bottom.collapsible
+		display none
+		@media (max-width: 951px)
+			display block
 	.nav-right
 		a
 			height 28px	
@@ -189,7 +221,7 @@ nav
 	margin -2.5%
 	flex-wrap wrap
 .desc-collections
-	bottom -6px
+	bottom 0
 	position absolute
 	display flex
 	background $gray2
@@ -208,14 +240,13 @@ nav
 .item-collections
 	width 20%
 	margin 2.5%
-	padding-bottom 123px
+	padding-bottom 129px
 	position relative
 	overflow hidden
 	&:hover
 		cursor pointer
 		.desc-product
 			max-height 200px
-			animation-delay 0s
 		.link-collections
 			margin-bottom 0
 			a
@@ -292,9 +323,10 @@ footer
 		position relative
 		h2
 			font-size 17px
-			font-family inherit
+			font-family $tit
 			margin 0
 			color inherit
+			font-weight unset
 			&:last-of-type
 				margin-top 20px
 		p
@@ -323,14 +355,215 @@ footer
 .wrapper-footer
 	display flex
 	justify-content space-between
+.socmed-icon
+	margin-top 25px
+	img
+		height 20px
+		margin 0 2px
+		
+// hero
+.hero-container
+	background $gray
+	padding 30px 0
+	.container
+		display flex
+		position relative
+		z-index 2
+.hero-header,.hero-desc
+	width 50%
+	p
+		font-size $desc-t
+		font-family dinR
+		line-height 30px
+	h2
+		text-transform uppercase
+		font-family dinM
+		font-size $header-t
+.hero
+	margin-bottom 3.5%
+	position relative
+.wrapper-img-hero
+	position absolute
+	overflow hidden
+	top 0
+	left 0
+	right 0
+	bottom 0
+	&:after
+		content ''
+		width 100%
+		height 100%
+		display block
+	img
+		display block
+		width 100%
+		height auto
+.wrapper-sitemap
+	margin-top 36px
+	margin-bottom 36px
+	a
+		font-size 16px
+		font-family dinM
+		color #A5A5A5
+		margin-right 2px
+		display inline-block
+	i
+		color #a5a5a5
+		font-size 12px
+.wrapper-item
+	display flex
+	margin-bottom 60px
+.wrapper-gallery-item
+	width 40%
+	position relative
+.wrapper-desc-item
+	width 55%
+.wrapper-desc-item
+	padding-left 30px
+	h2
+		margin 0
+		font-family dinM
+		font-size 21px
+		color #303030
+		margin-bottom 24px
+	h3
+		margin 0
+		font-family dinR
+		font-size 18px
+		color #303030
+		margin-bottom 24px
+	button
+		font-size 14px
+		color white
+		background $black
+		padding 10px 60px
+		font-family dinM
+		margin-bottom 36px
+	hr
+		margin 0
+		margin-bottom 36px
+.row-2
+	display flex
+	align-items baseline
+	label
+		width 15%
+		font-size 18px
+		color #303030
+		font-family dinR
+	select
+		width 40%
+		font-size 18px
+		color #303030
+		font-family dinr
+		margin-bottom 24px
+	input
+		margin-bottom 36px
+.description-item
+	margin-bottom 48px
+	p
+		margin 0
+		margin-bottom 10px
+		&:last-of-type
+			margin-bottom 0
+	span.title-desc
+		color #303030
+		font-size 18px
+		font-family dinM
+	span.content-desc
+		font-family dinR
+		color #3c3c3c
+		font-size 18px
+		line-height 23px
+.item-spec
+	h2
+		font-family dinM
+		color #303030
+		font-size 18px
+	.row-2
+		margin-bottom 10px
+		label
+			width 30%
+		span
+			width 70%
+			font-family dinR
+			color $black
+			font-size 18px
+		&:last-of-type
+			margin-bottom 0
+		
+.preview-gallery
+	padding-top 125%
+	position relative
+	overflow hidden
+	margin-bottom 20px
+	background $gray
+	figure
+		position absolute
+		left 0
+		top 0
+		right 0
+		bottom 0
+		margin 0
+		img
+			width 100%
+			height auto
+.owl-gallery
+	width 100%
+.navigasi-gallery
+	position absolute
+	bottom 0
+	width 100%
+	height 100%
+	display flex
+	justify-content space-between
+	align-itemscenter
+	pointer-events none
+	> div
+		height 100%
+		z-index 2
+		&.disabled
+			button
+				display none
+		button
+			height 100%
+			width 30px
+			background white
+			border none
+			&:hover
+				cursor pointer
+
+#preview
+	position absolute
+	top 0
+	right -100%
+	width 100%
+	height 500px
+
 // -------------------------------------------------------------------------------------------------------------
 @media (max-width: 993px)
 	.wrapper-caption-slider
 		padding 30px
 @media (max-width: 768px)
+	.wrapper-item
+		flex-wrap wrap
+	.wrapper-desc-item
+		width 100%
+		margin-top 30px
+	.wrapper-gallery-item
+		width 100%
+		padding-right 0
+	.hero-container
+		.container
+			flex-wrap wrap
+	.hero-header,.hero-desc
+		width 100%
+		p
+			margin 0
+		h2
+			margin-top 0
 	.hamburger
 		display block
-		width 35px
+		width 28px
 		margin-right 15px
 	#logo
 		width auto
@@ -341,7 +574,9 @@ footer
 			display none
 	nav
 		padding-top 15px
-		.nav-bottom
+		.nav-bottom,.nav-bottom.collapsible
+			display none
+		.nav-middle
 			display none
 	.wrapper-footer
 		flex-wrap wrap
@@ -370,6 +605,12 @@ footer
 		overflow unset
 	.desc-prices
 		bottom 10px
+	.socmed-icon
+		position relative
+		left 0
+		margin-top 20px
+		img
+			height 25px
 @media (max-width: 576px)
 	.container
 		padding 0 15px
