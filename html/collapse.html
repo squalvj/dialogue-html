@@ -16,22 +16,32 @@
     
 </head>
 <body>
-    <header>
+    <header class="collapsible">
         <div class="container">
-            <nav>
+            <nav class="collapsible">
                 <div class="nav-top nav-wrapper">
                     <div class="nav-left nav-util">
                         <a href="#" class="hamburger"> <img src="assets/img/hamburger.svg"> </a>
                         <a href="#"> <img id="logo" class="util-img" src="assets/img/logo.svg"> </a>
                     </div>
 
+                    <div class="nav-middle">
+                        <ul>
+                            <li><a href="#">Living</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Books</a></li>
+                            <li><a href="#">Art</a></li>
+                            <li><a href="#">Antique</a></li>
+                            <li><a href="#">Merchandise</a></li>
+                        </ul>
+                    </div>
+
                     <div class="nav-right nav-util">
-                        <a href="#"> Login </a>
                         <a href="#" class="cart"> <img class="util-img" src="assets/img/cart.svg"> <span class="count-cart"> 0 </span></a>
                         <a href="#"> <img class="util-img" src="assets/img/search.svg"> </a>
                     </div>
                 </div>
-                <div class="nav-bottom nav-wrapper">
+                <div class="nav-bottom nav-wrapper collapsible">
                     <ul>
                         <li><a href="#">Living</a></li>
                         <li><a href="#">Fashion</a></li>
@@ -46,26 +56,19 @@
     </header>
 
     <div class="main">
-        <section>
-            <div class="container">
-                <div class="wrapper-outer-slider">
-                    <div class="wrapper-slider">
-                        <div id="carousel-home" class="owl-carousel owl-theme">
-                            <div class="item"><a href="#"> <img class="img-slider" src="assets/img/slide1.jpg"> </a></div>
-
-                            <div class="item"><a href="#"> <img class="img-slider" src="assets/img/slide5.jpg"> </a></div>
-
-                            <div class="item"><a href="#"> <img class="img-slider" src="assets/img/slide3.jpg"> </a></div>
-
-                            <div class="item"><a href="#"> <img class="img-slider" src="assets/img/slide4.jpg"> </a></div>
-                        </div>
-                        <div id="navigasi-owl"></div>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="wrapper-img-hero">
+                    <img src="assets/img/slide2.jpg">
+                </div>
+                <div class="container">
+                    <div class="hero-header">
+                        <h2>LIVING</h2>
                     </div>
-
-                    <div class="wrapper-caption-slider">
-                        <a href="#" class="header-caption-slider"> SPECIAL PROMO: Dia.Lo.Gue Mugs </a>
-                        <p class="caption-slider">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                    <div class="hero-desc">
+                        <p>
+                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. Ut wisi enim ad minim veniam quis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -73,9 +76,6 @@
 
         <section>
             <div class="container">
-                <h2 class="header-collection">
-                    Best Selling Products
-                </h2>
                 <div class="wrapper-collection">
                     <div class="item-collections">
                         <div class="preview-item">
@@ -159,14 +159,7 @@
                             </div>
                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <section>
-            <div class="container">
-                <h2 class="header-collection">Just Arrived</h2>
-                <div class="wrapper-collection">
                     <div class="item-collections">
                         <div class="preview-item">
                             <div>
@@ -175,8 +168,7 @@
                         </div>
 
                         <div class="desc-collections">
-                            <div class="link-collections"><a href="#"> Traditional Themed Playing Cards with Bronzing 
-                                Technique </a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
+                            <div class="link-collections"><a href="#">Dia.lo.gue Frida Kahlo Sticky Notes Yellow Colour</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
                             </div>
                             <div class="desc-prices">
                                 <span>Rp 99.000</span> <a href="#">Art</a>
@@ -192,41 +184,7 @@
                         </div>
 
                         <div class="desc-collections">
-                            <div class="link-collections"><a href="#"> Traditional Themed Playing Cards with Bronzing 
-                                Technique </a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
-                            </div>
-                            <div class="desc-prices">
-                                <span>Rp 99.000</span> <a href="#">Art</a>
-                            </div>
-                       </div>
-                    </div>
-
-                    <div class="item-collections">
-                        <div class="preview-item">
-                            <div>
-                                <img src="assets/img/slide5.jpg">
-                            </div>
-                        </div>
-
-                        <div class="desc-collections">
-                            <div class="link-collections"><a href="#"> Traditional Themed Playing Cards with Bronzing 
-                                Technique Lorem Ipsum Dolor Sit Amet</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
-                            </div>
-                            <div class="desc-prices">
-                                <span>Rp 99.000</span> <a href="#">Art</a>
-                            </div>
-                       </div>
-                    </div>
-
-                    <div class="item-collections">
-                        <div class="preview-item">
-                            <div>
-                                <img src="assets/img/gray.jpg">
-                            </div>
-                        </div>
-
-                        <div class="desc-collections">
-                            <div class="link-collections"><a href="#">Topi Cowboi Cool</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
+                            <div class="link-collections"><a href="#">Dia.lo.gue Frida Kahlo Sticky Notes Yellow Colour</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
                             </div>
                             <div class="desc-prices">
                                 <span>Rp 99.000</span> <a href="#">Art</a>
@@ -277,23 +235,7 @@
                             <div class="link-collections"><a href="#">Dia.lo.gue Frida Kahlo Sticky Notes Yellow Colour</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
                             </div>
                             <div class="desc-prices">
-                                <span>Rp 99.000</span> <a href="#">Catalogue</a>
-                            </div>
-                       </div>
-                    </div>
-
-                    <div class="item-collections">
-                        <div class="preview-item">
-                            <div>
-                                <img src="assets/img/gray.jpg">
-                            </div>
-                        </div>
-
-                        <div class="desc-collections">
-                            <div class="link-collections"><a href="#">Dia.lo.gue Frida Kahlo Sticky Notes Yellow Colour</a> <p class="desc-product"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
-                            </div>
-                            <div class="desc-prices">
-                                <span>Rp 99.000</span> <a href="#">Modernizr</a>
+                                <span>Rp 99.000</span> <a href="#">Art</a>
                             </div>
                        </div>
                     </div>
