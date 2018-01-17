@@ -28,9 +28,25 @@
                     </div>
 
                     <div class="nav-right nav-util">
-                        <a href="#" class="user-name"> Welcome, Raisa Utomo <i class="fa fa-caret-down" aria-hidden="true"></i> </a>
+                        <div href="#" class="user-name rel"> 
+                            Welcome, Raisa Utomo 
+                            <i class="fa fa-caret-down" aria-hidden="true"></i> 
+                            <div class="util-lg">
+                                <a href="#"> Menu 1</a>
+                                <a href="#"> Menu 2</a>
+                                <a href="#"> Menu 3</a>
+                                <a href="#"> Menu 4</a>
+                            </div>
+                        </div>
                         <a href="#" class="cart"> <img class="util-img" src="assets/img/cart.svg"> <span class="count-cart"> 0 </span></a>
-                        <a href="#"> <img class="util-img" src="assets/img/search.svg"> </a>
+                        <a href="#" class="rel search-btn"> 
+                            <div class="search-bar">
+                                <form action"#" id="search-form">
+                                    <input type="text">
+                                </form>
+                            </div> 
+                            <img class="util-img" src="assets/img/search.svg"> 
+                        </a>
                     </div>
                 </div>
                 <div class="nav-bottom nav-wrapper">
@@ -68,7 +84,6 @@
                     <div class="rel">
                         <div class="owl-gallery owl-carousel owl-theme">
                             <div class="gallery-item active"><a> <img class="img-slider" src="assets/img/slide5.jpg"> </a></div>
-
                             <div class="gallery-item"><a> <img class="img-slider" src="assets/img/cm.jpg"> </a></div>
 
                             <div class="gallery-item"><a> <img class="img-slider" src="assets/img/slide1.jpg"> </a></div>
@@ -198,7 +213,6 @@
             </div>
         </section>
 
-
         <div class="divider"></div>
 
         <footer>
@@ -252,6 +266,28 @@
                     <li class="socmed-icon"><a href="#"><img src="assets/img/fb.svg"></a> <a href="#"><img src="assets/img/tw.svg"></a> <a href="#"><img src="assets/img/ig.svg"></a></li>
                 </ul>
             </div>
+
+            <div class="nav-mobile">
+                <button class="close-nav">x</button>
+                <div class="top">
+                    <h2>Hello Raisa</h2>
+                    <div class="divider"></div>
+                    <ul>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li class="dropdown"> Menu Dropdown <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <ul>
+                                <li><a href="#">Dropdown 1</a></li>
+                                <li><a href="#">Dropdown 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#">Menu 4</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
         </footer>
     </div>
     <script type="text/javascript" src="assets/bower_components/jquery/dist/jquery.min.js"></script>

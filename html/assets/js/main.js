@@ -63,6 +63,7 @@ $(".gallery-item").click(function(event) {
 	$(this).addClass('active')
 	var src = $(this).find('img').attr('src')
 	var img = $("#thumb")
+	var feather = $(".preview-gallery > a").attr('href', src);
 	img.attr('src', '...');
 	img.hide();
 	img.attr('src', src);
@@ -72,4 +73,45 @@ $(".gallery-item").click(function(event) {
 		img.show();
 	})
 	
+});
+
+$(".hamburger").click(function(event) {
+	$(".nav-mobile").addClass('active')
+	$("body").addClass('no-scroll')
+});
+
+$(".close-nav").click(function(event) {
+	$(".nav-mobile").removeClass('active')
+	$("body").removeClass('no-scroll')
+});
+
+$(".dropdown").click(function(event) {
+	$(this).toggleClass('active');
+})
+
+$(".util-img").click(function(event) {
+	var parent = $(this).parent('.search-btn')
+	if (parent.find('.search-bar').hasClass('active')){
+		parent.find('.search-bar').removeClass('active')
+	}else{
+		parent.find('.search-bar').addClass('active');
+	}
+	if (parent.find('input').val() == ''){
+		return;
+	}else{
+		$("#search-form").submit();
+		console.log("SUBMIT")
+	}
+});
+
+$(".search-btn input").click(function(e) {
+    e.stopPropagation();
+});
+
+$(document).click(function(e) {
+    var target = e.target;
+    if (!$(target).is('.search-btn') && !$(target).parents().is('.search-btn')) {
+        $(".search-bar").removeClass('active')
+        $("#search-form input").val("")
+    }
 });
