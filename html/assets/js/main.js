@@ -89,12 +89,13 @@ $(".dropdown").click(function(event) {
 	$(this).toggleClass('active');
 })
 
-$(".util-img").click(function(event) {
+$(".search-btn .util-img").click(function(event) {
 	var parent = $(this).parent('.search-btn')
 	if (parent.find('.search-bar').hasClass('active')){
 		parent.find('.search-bar').removeClass('active')
 	}else{
 		parent.find('.search-bar').addClass('active');
+		$("#search-form input").focus();
 	}
 	if (parent.find('input').val() == ''){
 		return;
