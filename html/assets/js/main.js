@@ -1,63 +1,63 @@
+$(window).on('load',function(){
+	//bug owlcarousel will result height image 1px if call wasnt made by this window load
+	setCarouselHome();
+	setGallerySingle();
+});
 
 $(document).ready(function() {
 	var click = false;
-	init()
 	var w = $(window).width();
 });
 
 function init(){
- 	setCarouselHome();
- 	restartImgOwl();
- 	setGallerySingle();
+	//restartImgOwl();
 }
 
 function setCarouselHome(){
 	var nav = ["<img src='assets/img/left-arrow.png'>", "<img src='assets/img/right-arrow.png'>"]
     var navC = '#navigasi-owl';
- 	$('#carousel-home').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    nav:true,
-	    items:1,
-	 	autoHeight:true,
-		navContainer: navC,
-		navText: nav,
-	})
+    if ($("#carousel-home").length){
+    	$('#carousel-home').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    items:1,
+		 	autoHeight:true,
+			navContainer: navC,
+			navText: nav,
+		})
+    }
+ 	
 }
 
 function setGallerySingle(){
 	var w = $(window).width();
 	var nav = ["<button><i class='fa fa-caret-left' aria-hidden='true'></i></button>", "<button><i class='fa fa-caret-right' aria-hidden='true'></i></button>"]
     var navC = '.navigasi-gallery';
-	$('.owl-gallery').owlCarousel({
-	    margin:10,
-	    autoHeight:true,
-	    nav:true,
-	    items:5,
-	    navContainer: navC,
-		navText: nav,
-		dots: w < 768 ? true : false,
-		responsive:{
-	        0:{
-	            items:1,
-	            nav:false
-	        },
-	        768:{
-	            items:3,
-	        },
-	        1000:{
-	            items:5,
-	        }
-    	}
-	})
+    if ($(".owl-gallery").length){
+		$('.owl-gallery').owlCarousel({
+		    margin:10,
+		    autoHeight:true,
+		    nav:true,
+		    items:5,
+		    navContainer: navC,
+			navText: nav,
+			dots: w < 768 ? true : false,
+			responsive:{
+		        0:{
+		            items:1,
+		            nav:false
+		        },
+		        768:{
+		            items:3,
+		        },
+		        1000:{
+		            items:5,
+		        }
+	    	}
+		})
+	}
 }
-
-function restartImgOwl(){
-	var img = $(".img-slider")
-	if (img.closest('.owl-height').height() === 1) { img.closest('.owl-carousel').trigger('refresh.owl.carousel'); }
-}
-
-
 $(".gallery-item").click(function(event) {
 	$(".owl-gallery").find(".gallery-item").removeClass('active')
 	$(this).addClass('active')
@@ -106,6 +106,27 @@ $(".search-btn .util-img").click(function(event) {
 });
 
 $(".search-btn input").click(function(e) {
+    e.stopPropagation();
+});
+
+$(".submit-item").click(function(event) {
+	$(".modal").addClass('active')
+	$("body").addClass('no-scroll')
+});
+
+$(".modal").click(function(event) {
+	if ($(this).hasClass('active')){
+		$(this).removeClass('active')
+		$("body").removeClass('no-scroll')
+	}
+});
+
+$(".btn-shopagain").click(function(event) {
+	$(".modal").removeClass('active')
+	$("body").removeClass('no-scroll')
+});
+
+$(".modal *").click(function(e) {
     e.stopPropagation();
 });
 

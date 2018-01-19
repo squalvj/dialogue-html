@@ -22,6 +22,7 @@ $white = #ffffff
 $header-t = 24px
 $desc-t = 18px
 $tit = 'Titillium Web', sans-serif;
+$green = #42a842
 
 display()
 	-webkit-display arguments
@@ -94,6 +95,8 @@ h1,h2,h3,p,a
 	font-weight unset
 a
 	text-decoration none
+ul
+	list-style-type none
 .util-img
 	width 28px
 	height auto
@@ -526,6 +529,7 @@ footer
 	i
 		color #a5a5a5
 		font-size 12px
+		margin 0 5px
 .wrapper-item
 	display flex
 	margin-bottom 60px
@@ -673,11 +677,352 @@ footer
 	justify-content center
 	img
 		width 30%
+// modal
+.modal
+	width 100%
+	height 100%
+	position fixed
+	top 0
+	left 0
+	display flex
+	justify-content center
+	align-items center
+	//background rgba(255,255,255,0.9)
+	background white
+	z-index 10
+	transition all .75 ease
+	transform scale(0)
+	&.active
+		transform scale(1)
+.content-modal
+	width 638px
+	background #f7f7f7
+	padding 36px 24px 24px
+	box-shadow 5px 5px 30px -10px rgba(0,0,0,0.5)
+	img.img-modal
+		width 100%
+.left-modal
+	width 30%
+.right-modal
+	width 70%
+	padding-left 24px
+	> h2
+		margin 0
+		font-size 21px
+		font-family dinM
+		margin-bottom 15px
+		span
+			margin-left 10px
+	p
+		font-size 18px
+		line-height 25px
+.header-desc-modal
+	margin 0
+	font-family dinM
+.desc-modal
+	margin 0
+	font-family dinR
+	
+.wrapper-desc-modal
+	margin-bottom 15px
+.wrapper-btn-modal
+	margin-top 30px
+	display flex
+	justify-content space-between
+	a
+		display block
+		width 48%
+		font-size 18px
+		font-family dinM
+		
+		button
+			padding 7px 10px
+			width 100%
+			&.proceed-btn
+				padding 14px
+				width 100%
+.btn-gray
+	color #848484
+	background #f9f9f9
+	border 1px solid #848484
+.btn-black
+	color $white
+	background $black
+	border 1px solid $black
+
+// checkout
+.checkout-status
+	display flex
+	align-items center
+	h2
+		margin 0
+		font-family dinM
+		font-size 24px
+		margin-right 30px
+	ul
+		list-style-type none
+		margin 0
+		padding 0
+		display flex
+		li
+			font-family dinM
+			margin 0 15px
+			&.active
+				a
+					color $green
+					span
+						&:before
+							border 1px solid $green
+							background white
+			a
+				font-family inherit
+				font-size 18px
+				span
+					position relative
+					margin-right 10px
+					&:before
+						position absolute
+						left -8px
+						top -1px
+						width 25px
+						height 25px
+						border 1px solid $gray
+						content ''
+						border-radius 50px
+						background $gray
+						z-index -1
+// billing
+.billing-information
+	display flex
+	margin 0 -15px
+	*:focus
+		outline none
+	input
+		border-radius 6px
+		border none
+		background #f7f7f7
+		padding 10px
+		font-family dinR
+	select
+		padding 10px
+		border-radius 6px
+		border 1px solid $black
+		font-family dinR
+	label
+		font-size 18px
+		font-family dinR
+		margin-bottom 5px
+	h2
+		font-size 21px
+		font-family dinM
+		margin-top 36px
+	textarea
+		padding 10px
+		border-radius 6px
+		background #f7f7f7
+		font-family dinR
+		resize none
+.left-billing,.right-billing
+	width 50%
+	padding 0 15px
+.row
+	display flex
+	.col-5
+		width 50%
+	.col-10
+		width 100%
+	.col-7
+		width 70%
+	.col-3
+		width 30%
+	.gray
+		background #efefef
+	.white
+		background #fcfcfc
+	.table
+		padding 21px
+		span
+			font-size 18px
+			font-family dinM
+			i
+				font-style normal
+		&.r
+			span
+				font-family dinR
+.flex-col
+	flex-direction column
+.form-2
+	margin 0 -10px 24px
+	> div
+		padding 0 10px
+.form-1
+	margin-bottom 24px
+
+// login
+.wrapper-login
+	display flex
+	margin 0 -30px
+	.left-login,.right-login
+		width 50%
+		padding 0 30px
+	h2
+		font-size: 24px;
+		font-family: dinM;
+		margin-top: 36px;
+		margin-bottom 34px
+	label
+		font-size: 18px;
+		font-family: dinR;
+		margin-bottom: 5px;
+	input
+		border-radius 6px
+		border none
+		background #f7f7f7
+		padding 10px
+		font-family dinR
+.wrapper-login
+	margin-top 18px
+	button
+		padding 8px 50px
+		font-size: 18px;
+		font-family: dinM;
+		background #3c3c3c
+		color white
+		border 1px solid #3c3c3c
+		&:hover
+			color #3c3c3c
+			background white
+	a
+		margin-left 24px
+	&:after
+		content ''
+		height 95%
+		width 2px
+		background #afafaf
+		position absolute
+		left 50%
+		bottom 0
+		transform translate(-50%)
+.register
+	margin-bottom 24px
+// account details
+.wrapper-account
+	margin 50px 0
+.dashboard-account
+	width 350px
+	ul
+		padding 0
+		font-family dinM
+		font-size 21px
+		color #303030
+		li
+			margin 5px 20px
+			&.active
+				a
+					color #303030
+			a
+				font-family dinM
+				font-size 18px
+				color #a0a0a0
+.header-dashboard
+	font-family: dinM;
+	font-size: 21px;
+	color: #303030;
+	margin-bottom 0
+	margin-top 40px
+.wrapper-table-account
+	margin 20px 0 30px
+	overflow-y auto
+	.gray-2
+		background #e0e0e0
+	table
+		width 100%
+		overflow-y auto
+		border-collapse: collapse;
+		border-spacing: 0;
+		button
+			background #3c3c3c
+			padding 10px 20px
+			font-family dinR
+			font-size 18px
+			color white
+		td,th
+			padding 20px
+		thead
+			background #e0e0e0
+			font-family dinM
+			font-size 18px
+			tr
+				th
+					text-align left
+		tbody
+			background #e0e0e0
+			font-family dinR
+			font-size 18px
+			tr:nth-of-type(odd)
+				background #fafafa
+			tr:nth-of-type(even)
+				background #f2f2f2
+.wrapper-billing-address
+	h2
+		font-size: 24px;
+		font-family: dinM;
+		margin-top: 36px;
+		margin-bottom 14px
+	p
+		font-family dinR
+		font-size 18px
+		color #4f4f4f
+		line-height 24px
+		margin 0
+		padding 10px
+		background #fafafa
+.notification-orders
+	font-family dinM
+	font-size 21px
+	margin-top 32px
+	a
+		font-family inherit
+		text-decoration underline
 // -------------------------------------------------------------------------------------------------------------
 @media (max-width: 993px)
 	.wrapper-caption-slider
 		padding 30px
 @media (max-width: 768px)
+	header:after
+		bottom -15px
+	.hero
+		margin-top 15px
+	.wrapper-login
+		flex-wrap wrap
+		.left-login,.right-login
+			width 100%
+		&:after
+			width 91.5%
+			height 2px
+			margin auto
+			transform none
+			top -110px
+			left 0
+			right 0
+			bottom 0
+		.left-login
+			margin-bottom 24px
+		a
+			margin-left 12px
+		button.register
+			width 100%
+	.billing-information
+		margin 0
+		flex-wrap wrap
+		.row
+			.col-7
+				width 60%
+			.col-3
+				width 40%
+	.left-billing,.right-billing
+		width 100%
+		padding 0
 	.util-lg
 		display none !important
 	.row-2
@@ -787,7 +1132,36 @@ footer
 		margin-top 20px
 		img
 			height 25px
+@media (max-width: 597px)
+	.checkout-status
+		flex-wrap wrap
+		ul
+			margin-top 15px
+			li
+				padding 0 0 15px
+				&:first-child
+					margin-left 10px
+
+
 @media (max-width: 576px)
+	.wrapper-table-account
+		.row
+			.col-7
+				width 50%
+			.col-3
+				width 50%
+	.content-modal
+		max-height 100vh
+		overflow auto
+		padding 20px
+	.left-modal
+		width 100%
+	.right-modal
+		width 100%
+		padding-left 0
+		margin-top 20px
+	.flex
+		flex-wrap wrap
 	.search-bar
 		position absolute
 		top 100%
@@ -805,6 +1179,20 @@ footer
 	.wrapper-caption-slider
 		background $gray2
 		padding 30px
+@media (max-width: 432px)
+	.checkout-status
+		ul
+			justify-content space-between
+			width 100%
+			li
+				a
+					display flex
+					flex-direction column
+					align-items center
+					text-align center
+					span
+						margin-right 0
+						margin-bottom 10px
 // -----------------------------------------------------------------------------------------------------------
 @-moz-document url-prefix()
 	.wrapper-collection
